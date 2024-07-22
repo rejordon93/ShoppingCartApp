@@ -4,8 +4,15 @@ import App from "./App.tsx";
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
+import { CartProvider } from "./context/CartProvider.tsx";
+import { ProductsProvider } from "./context/ProductsProvider.tsx";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <ProductsProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </ProductsProvider>
   </React.StrictMode>
 );

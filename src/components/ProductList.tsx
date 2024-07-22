@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
 import { useCart } from "../hooks/useCart";
 import { useProducts } from "../hooks/useProducts";
-import { Item, Container } from "semantic-ui-react";
 import { Product } from "./Product";
+import { Card } from "semantic-ui-react";
 
-export const ProductList = () => {
+export const ProductList = (): ReactElement => {
   const { dispatch, REDUCER_ACTIONS, cart } = useCart();
   const { products } = useProducts();
 
@@ -25,7 +25,6 @@ export const ProductList = () => {
       );
     });
   }
-  const content = <main className="main main--products">{pageContent}</main>;
 
-  return content;
+  return <Card.Group itemsPerRow={3}>{pageContent}</Card.Group>;
 };
