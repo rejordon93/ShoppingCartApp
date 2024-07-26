@@ -20,6 +20,7 @@ const REDUCER_ACTION_TYPE = {
   REMOVE: "REMOVE",
   QUANTITY: "QUANTITY",
   SUBMIT: "SUBMIT",
+  MULTIPLY: "MULTIPLY",
 };
 
 export type ReducerActionType = typeof REDUCER_ACTION_TYPE;
@@ -86,6 +87,10 @@ const reducer = (
 
     case REDUCER_ACTION_TYPE.SUBMIT: {
       return { ...state, cart: [] };
+    }
+
+    case REDUCER_ACTION_TYPE.MULTIPLY: {
+      return { ...state };
     }
 
     default:
