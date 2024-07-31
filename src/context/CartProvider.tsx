@@ -109,7 +109,7 @@ const useCartContext = (initCartState: CartStateType) => {
   const totalItems: number = state.cart.reduce((previousValue, cartItem) => {
     return previousValue + cartItem.qty;
   }, 0);
-  s;
+
   const totalPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
